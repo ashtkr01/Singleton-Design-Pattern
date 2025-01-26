@@ -8,7 +8,11 @@ public class Samosa {
     // Lazy way of creating single object
     public static Samosa getSamosa() {
         if(samosa == null){
-            samosa = new Samosa();
+            synchronized (Samosa.class){
+                if(samosa == null){
+                    samosa = new Samosa();
+                }
+            }
         }
         return samosa;
     }
