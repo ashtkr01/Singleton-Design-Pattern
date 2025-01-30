@@ -17,4 +17,8 @@ public class Samosa implements Serializable {
         }
         return samosa;
     }
+
+    public Object readResolve() {
+        return samosa;
+    }
 }
