@@ -3,7 +3,9 @@ public class Samosa {
 
     //Constructor
     private Samosa() {
-
+        if(samosa != null){
+            throw new RuntimeException("You are trying to break the singleton Principle");
+        }
     }
     // Lazy way of creating single object
     public static Samosa getSamosa() {
