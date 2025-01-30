@@ -8,6 +8,8 @@ public class Main {
         System.out.println(s1.hashCode());
         Samosa s2 = Samosa.INSTANCE;
         System.out.println(s2.hashCode());
+        s1.testMethod();
+        s2.testMethod();
 
         Constructor<Samosa> constructor = Samosa.class.getDeclaredConstructor();
         constructor.setAccessible(true);
