@@ -1,7 +1,20 @@
-public enum Samosa {
-    INSTANCE;
+import java.io.Serializable;
 
-    public void testMethod() {
-        System.out.println("Test Method");
+public class Samosa implements Serializable {
+    private static Samosa samosa;
+
+    //Constructor
+    private Samosa() {
+    }
+    // Lazy way of creating single object
+    public static Samosa getSamosa() {
+        if(samosa == null){
+            synchronized (Samosa.class){
+                if(samosa == null){
+                    samosa = new Samosa();
+                }
+            }
+        }
+        return samosa;
     }
 }
